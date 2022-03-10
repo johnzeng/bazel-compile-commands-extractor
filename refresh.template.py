@@ -297,7 +297,7 @@ def _get_commands(target: str, flags: str):
         # We switched to jsonproto instead of proto because of https://github.com/bazelbuild/bazel/issues/13404. We could change back when fixed--reverting most of the commit that added this line and tweaking the build file to depend on the target in that issue. That said, it's kinda nice to be free of the dependency, unless (OPTIMNOTE) jsonproto becomes a performance bottleneck compated to binary protos.
         "--output=jsonproto",
         # Shush logging. Just for readability.
-        "--ui_event_filters=-info",
+        #"--ui_event_filters=-info",
         "--noshow_progress",
     ] + shlex.split(flags)
 
